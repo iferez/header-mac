@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú de Navegación</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <button id="menuButton">Para vos</button>
+  </header>
+
+  <div id="menu" class="menu hidden">
+    <button id="closeMenuButton" onclick="closeMenu()">×</button> <!-- Botón de cerrar -->
+
+    <div class="menu-column" data-menu="main">
+      <div class="menu-header">
+        <button id="backButton" onclick="goBack()">←</button>
+        <h3>Hacete cliente</h3>
+      </div>
+      <ul>
+        <li onclick="openSubMenu('personas', this)">Personas <span class="arrow">→</span></li>
+        <li onclick="openSubMenu('jubilados')">Jubilados</li>
+        <li onclick="openSubMenu('selecta')">Selecta</li>
+      </ul>
+    </div>
+
+    <div class="menu-column hidden" data-menu="personas">
+      <div class="menu-header">
+        <button id="backButton" onclick="goBack()">←</button>
+        <h3>Personas</h3>
+      </div>
+      <ul>
+        <li>Cuentas</li>
+        <li onclick="openSubMenu('tarjetas', this)">Tarjetas <span class="arrow">→</span></li>
+        <li>Propuestas</li>
+        <li>Sueldos</li>
+        <li>Seguros</li>
+      </ul>
+    </div>
+
+    <div class="menu-column hidden" data-menu="tarjetas">
+      <div class="menu-header">
+        <button id="backButton" onclick="goBack()">←</button>
+        <h3>Tarjetas</h3>
+      </div>
+      <ul>
+        <li onclick="openSubMenu('visa')">Visa <span class="arrow">→</span></li>
+        <li>American Express</li>
+        <li>Mastercard</li>
+      </ul>
+    </div>
+
+    <div class="menu-column hidden" data-menu="visa">
+      <div class="menu-header">
+        <button id="backButton" onclick="goBack()">←</button>
+        <h3>Visa</h3>
+      </div>
+      <ul>
+        <li>Visa Macro</li>
+        <li>Visa Gold</li>
+        <li>Visa Platinum</li>
+      </ul>
+    </div>
+
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

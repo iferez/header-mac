@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    padding: 10px;
+  }
+  
+  #menuButton {
+    background-color: #002A7F;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .menu {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .menu-column {
+    width: 250px;
+    padding: 15px;
+    border-right: 1px solid #ccc;
+  }
+  
+  .menu-column:last-child {
+    border-right: none;
+  }
+  
+  .menu h3 {
+    color: #002A7F;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .menu ul {
+    list-style: none;
+  }
+  
+  .menu li {
+    padding: 8px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .menu li:hover {
+    color: #002A7F;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  .selected {
+    font-weight: 700;
+    color: #002A7F;
+  }
+
+  
+/* CERRAR */
+
+  #closeMenuButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  #closeMenuButton:hover {
+    color: #002A7F;
+  }
+
+  
+  #backButton {
+    margin-right: 10px; /* Espacio entre el botón y el título */
+    font-size: 14px;
+    background: none;
+    border: none;
+    color: blue;
+    cursor: pointer;
+    display: none; /* Oculto inicialmente */
+  }
+  
+  /* Estilos para Desktop */
+@media (min-width: 768px) {
+  .menu-column {
+    display: inline-block; /* Muestra las columnas en fila para desktop */
+    width: 200px; /* Ancho de cada columna */
+    vertical-align: top;
+  }
+
+  #backButton {
+    display: none; /* Oculta el botón de volver en desktop */
+  }
+}
+
+/* Estilos para Mobile */
+@media (max-width: 767px) {
+  .menu-column {
+    display: block;
+    width: 100%; /* Usa todo el ancho en mobile */
+  }
+
+  .menu-header {
+    display: flex;
+    align-items: center;
+    padding: 10px; /* Espaciado para el encabezado */
+  }
+  
+  #backButton {
+    margin-right: 10px; /* Espacio entre el botón y el título */
+    font-size: 14px;
+    background: none;
+    border: none;
+    color: blue;
+    cursor: pointer;
+  }
+  
+  .menu-column[data-menu]:not([data-menu="main"]) #backButton {
+    display: block;
+  }
+  
+  .menu-header h3 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+}
+
+  
